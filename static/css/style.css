@@ -1,0 +1,243 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    background-color: #4A90E2;
+    padding: 15px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensures the navbar is above other content */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Aligns links to the right */
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #e0e0e0; /* Slightly lighter on hover */
+}
+
+/* Main Container Styles */
+.main-container {
+    margin-top: 60px; /* Push down the main content */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: space-around; /* Center elements */
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Calculator Container */
+.calculator-container, .result-table-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(30% - 20px); /* Adjust width with margin */
+    margin: 10px; /* Add some spacing between cards */
+}
+
+/* Result Container */
+.result-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+
+/* Result Box */
+.result-box {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    color: #4A90E2;
+    background-color: #f7f7f7;
+    width: 100%;
+}
+
+/* Headings */
+h2, h3 {
+    text-align: center;
+    color: #4A90E2;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styles */
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input Styles */
+input[type="number"], input[type="text"] {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus, input[type="text"]:focus {
+    border-color: #4A90E2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Height Container */
+.height-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.height-container input[type="number"] {
+    flex: 1; /* Takes the available space */
+    padding: 12px; /* Padding for the input field */
+    margin-right: 10px; /* Space between input and select */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid #ddd; /* Border style */
+}
+
+.height-container select {
+    padding: 12px; /* Padding for the select dropdown */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid #ddd; /* Border style */
+}
+
+/* Radio button styling */
+fieldset {
+    border: none;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Button styling */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 48%; /* Adjust button width */
+}
+
+button:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+}
+
+.reset {
+    background-color: #e74c3c;
+}
+
+.reset:hover {
+    background-color: #c0392b;
+}
+
+/* Result table styling */
+.bmi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.bmi-table th, .bmi-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.bmi-table th {
+    background-color: #4A90E2;
+    color: white;
+    font-weight: bold;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .calculator-container, .result-table-container {
+        width: calc(100% - 20px); /* Full width on smaller screens */
+    }
+
+    .navbar ul {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center;
+    }
+
+    .navbar li {
+        margin: 10px 0; /* Adjust spacing for vertical layout */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Add padding to the body for smaller screens */
+    }
+
+    button {
+        width: 100%; /* Full width for buttons on small screens */
+    }
+
+    .height-container {
+        flex-direction: column; /* Stack height input and select */
+        align-items: stretch; /* Stretch elements to full width */
+    }
+
+    .height-container input[type="number"],
+    .height-container select {
+        margin-right: 0; /* Reset right margin */
+        margin-bottom: 10px; /* Space between stacked elements */
+    }
+}

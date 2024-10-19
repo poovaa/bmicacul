@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#dietfood">Diet Food</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Calculator Container -->
+        <div class="calculator-container">
+            <h2>BMI Calculator</h2>
+            <form id="bmiForm">
+                <!-- Weight Input -->
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" placeholder="Enter your weight" required min="0" aria-required="true">
+
+                <!-- Height Input -->
+                <label for="height">Height:</label>
+                <div class="height-container">
+                    <input type="number" id="height" name="height" step="0.01" placeholder="Enter height" required min="0" aria-required="true">
+                    <select id="heightUnit" name="heightUnit" required aria-required="true">
+                        <option value="cm">cm</option>
+                        <option value="ft">feet</option>
+                    </select>
+                </div>
+
+                <!-- Gender Input -->
+                <fieldset>
+                    <legend>Gender:</legend>
+                    <label for="male">
+                        <input type="radio" id="male" name="gender" value="male" required aria-required="true">
+                        Male
+                    </label>
+                    <label for="female">
+                        <input type="radio" id="female" name="gender" value="female" required aria-required="true">
+                        Female
+                    </label>
+                </fieldset>
+
+                <!-- Button Container -->
+                <div class="button-container">
+                    <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+                    <button type="button" class="reset" onclick="resetForm()">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Result Container -->
+        <div class="result-container">
+            <label for="result">Your BMI:</label>
+            <input type="text" id="result" readonly class="result-box" aria-readonly="true">
+        </div>
+
+        <!-- Result Table Container -->
+        <div class="result-table-container">
+            <h3>BMI Categories</h3>
+            <table class="bmi-table" role="presentation">
+                <thead>
+                    <tr>
+                        <th>BMI Range</th>
+                        <th>Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Under 18.5</td>
+                        <td>Underweight</td>
+                    </tr>
+                    <tr>
+                        <td>18.5 - 24.9</td>
+                        <td>Normal weight</td>
+                    </tr>
+                    <tr>
+                        <td>25.0 - 29.9</td>
+                        <td>Overweight</td>
+                    </tr>
+                    <tr>
+                        <td>30.0 and above</td>
+                        <td>Obesity</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Script Tag -->
+    <script src="{% static 'js/scriptt.js' %}"></script>
+</body>
+</html>
