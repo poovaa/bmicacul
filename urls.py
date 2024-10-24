@@ -21,9 +21,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-	path('',views.home),
-
-]
+	path('home',views.home),
+	path('',views. login ,name='login'),
+	path('sign', views.signup_view, name='signup'),  # Added signup URL
+	path('forgotpass',views.reset_password,name='changepassword'),
+	path('forgot',views.forgot,name='forgot'),
+   ]
 
 
   
